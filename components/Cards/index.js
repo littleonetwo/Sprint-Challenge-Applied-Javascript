@@ -22,47 +22,63 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then( response => {
 
-    console.log(response);
-    console.log(response.data.articles[0]);
+    
     let target = document.querySelector('.cards-container');
     let count = 0;
 
 
-    response.data.articles.bootstrap.forEach( id =>{
+    let topics = Object.keys(response.data.articles);
 
-      let article = newCard(id);
-      target.appendChild(article);
+    while( count < topics.length){
 
-    });
+        let currentTopic = `response.data.articles.${topics[count]}.forEach( id =>{
 
-    response.data.articles.javascript.forEach( id =>{
+        let article = newCard(id);
+        target.appendChild(article);
 
-      let article = newCard(id);
-      target.appendChild(article);
+      })`;
+      //console.log(currentTopic);
 
-    });
+      eval(currentTopic);
+      count ++;
+    };
 
-    response.data.articles.jquery.forEach( id =>{
 
-      let article = newCard(id);
-      target.appendChild(article);
+    // response.data.articles.bootstrap.forEach( id =>{
+    //
+    //   let article = newCard(id);
+    //   target.appendChild(article);
+    //
+    // });
+    //
+    // response.data.articles.javascript.forEach( id =>{
+    //
+    //   let article = newCard(id);
+    //   target.appendChild(article);
+    //
+    // });
+    //
+    // response.data.articles.jquery.forEach( id =>{
+    //
+    //   let article = newCard(id);
+    //   target.appendChild(article);
+    //
+    // });
+    //
+    // response.data.articles.node.forEach( id =>{
+    //
+    //   let article = newCard(id);
+    //   target.appendChild(article);
+    //
+    // });
+    //
+    // response.data.articles.technology.forEach( id =>{
+    //
+    //   let article = newCard(id);
+    //   target.appendChild(article);
+    //
+    // });
 
-    });
-
-    response.data.articles.node.forEach( id =>{
-
-      let article = newCard(id);
-      target.appendChild(article);
-
-    });
-
-    response.data.articles.technology.forEach( id =>{
-
-      let article = newCard(id);
-      target.appendChild(article);
-
-    });
-    count ++;
 
 
   })
