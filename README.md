@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+It is the Document Object Model, it's basically our interface to webpages, it allows us to read and manipulate the the pages and styles. 
+
 2. What is an event?
+
+Basically it is things that can happen to elements in a page so like hovering and clicking and things like that.
 
 3. What is an event listener?
 
+it is a way for us the creator to detect events and then create reactions
+
 4. Why would we convert a NodeList into an Array?
 
+it allows us to use the Array functions to manipulate your nodelist easier
+
 5. What is a component?
+
+it is reuseable custom elements created to automate building of certain parts of your pages.
 
 ### Git Set up
 
